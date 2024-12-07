@@ -1,0 +1,20 @@
+Stt, Staff Code, Department, Position, Full Name, Sex, Date of Birth, Phone Number, Email, Basic Salary, Salary Coefficient, Review, Dayoff.
+1, NV.001, Kinh doanh, Nhan vien, Nguyen Diep Anh, Nu, 10-06-1999, 0926408193, anhnd@gmail.com, 12000000, 1.4, 8.0, 2.
+2, NV.002, HC-NS, Quan ly, Tran Nam Anh, Nam, 11-08-1989, 0926342550, anhtn@gmail.com, 20000000, 1.3, 9.0, 1.
+3, NV.003, Marketing, TTS, Hoang Ngoc Bach, Nam, 12-08-2001, 0834802081, bachhn@gmail.com, 3000000, 1.2, 7.0, 3.
+4, NV.004, Ke toan, Hoc viec, Nguyen Thi Kim Dung, Nu, 14-09-1999, 0816353987, dungkt@gmail.com, 8000000, 1.2, 6.0, 5.
+5, NV.005, Kinh doanh, Nhan vien, Pham Hoang Dang, Nam, 13-05-1998, 0924876658, danghp@gmail.com, 10000000, 1.4, 8.0, 2.
+6, NV.006, Marketing, TTS, Tran Ngoc Ha, Nu, 16-04-1999, 0924655543, hatn@gmail.com, 3500000, 1.2, 8.0, 4.
+7, NV.007, HC-NS, Nhan vien, Nguyen Duc Hai, Nam, 15-11-1990, 0924655543, hatn@gmail.com, 12500000, 1.3, 7.0, 1.
+8, NV.008, PTS, Nhan vien, Do Quoc Hung, Nam, 17-10-2000, 0924655543, hatn@gmail.com, 13000000, 2.5, 9.0, 1.
+9, NV.009, PTS, Nhan vien, Nguyen Thanh Hung, Nam, 20-08-2001, 0924655543, hatn@gmail.com, 12800000, 1.4, 8.0, 2.
+10, NV.010, PTS, Nhan vien, Tran Van Huy, Nam, 10-09-1995, 0924655543, hatn@gmail.com, 14000000, 1.2, 7.0, 3.
+11, NV.011, Ke toan, Nhan vien, Nguyen Hoang Nam, Nam, 28-08-1998, 0924655543, hatn@gmail.com, 10500000, 1.4, 7.0, 1.
+12, NV.012, Marketing, TTS, Tran Le An, Nam, 12-05-2000, 0924655543, hatn@gmail.com, 4000000, 1.2, 6.0, 3.
+13, NV.013, HC-NS, Nhan vien, Trinh Ha Phuong, Nu, 18-10-1999, 0924655543, hatn@gmail.com, 11000000, 1.3, 8.0, 2.
+14, NV.014, PTS, Quan ly, Trinh Minh Thu, Nu, 25-07-1988, 0924655543, hatn@gmail.com, 22000000, 2.5, 9.0, 1.
+15, NV.015, PTS, Nhan vien, Le Minh Tri, Nam, 03-12-1998, 0924655543, hatn@gmail.com, 14500000, 1.4, 8.0, 2.
+16, NV.016, Kinh doanh, Nhan vien, Dinh Quoc Trung, Nam, 28-09-1999, 0924655543, hatn@gmail.com, 12000000, 1.3, 7.0, 3.
+17, NV.017, HC-NS, Nhan vien, Vo Quang Vinh, Nam, 28-08-1988, 0924655442, hatn@gmail.com, 13500000, 1.2, 8.0, 1.
+18, NV.018, khong co, Quan ly, Phan Cong Tuan Anh, Nam, 06-11-2005, 0328664699, patuananh11@gmail.com, 100000000000, 3.4, 7.0, 3.
+19, NV.019, Kinh Doanh, Nhan Vien, Phan Cong Tuan Anh, Nam, 11-06-2005, 0328664699, patuanem@gmail.com, 20000000, 2.5, 9.0, 2.

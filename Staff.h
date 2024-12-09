@@ -1,14 +1,13 @@
 //Staff.h:
 #ifndef Staff_h
 #define Staff_h
-#include"Payroll.h"
 #include<iostream>
 #include<string>
 #include"People.h"
 #include"Date.h"
+#include"Payroll.h"
 
 using namespace std;
-
 class Payroll;
 class Staff: public People {
     protected:
@@ -33,15 +32,16 @@ class Staff: public People {
         double  getDecuction()         const;
         double  getSalary()            const;
 
-        void    setStaffCode(const string& );
-        void    setPosition(const string& );
-        void    setDepartment(const string& );
-        void    setReview(const double& );
-        void    setDayOff(const int& );
-        void    setSalaryCoefficient(const float& );
-        void    setBasicSalary(const double& );
+        void    setStaffCode(const string&);
+        void    setPosition(const string&);
+        void    setDepartment(const string&);
+        void    setReview(const double&);
+        void    setDayOff(const int&);
+        void    setSalaryCoefficient(const float&);
+        void    setBasicSalary(const double&);
 
         void    AddInfor();
         void    DisplayInfor() const;
 };
+
 #endif

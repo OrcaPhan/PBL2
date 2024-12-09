@@ -30,21 +30,23 @@ class SystemManager {
         void append(Staff*);
         void remove(string);
 
-        Staff* findByStaffCode(const string&);       // Trả về con trỏ Staff
-        void displayByStaffCode(const string&);      // Hiển thị thông tin nhân viên
+        Staff* findByStaffCode(const string&);
+        void displayByStaffCode(const string&);
         
         vector<Staff*> findByFullName(const string& );
         void displayByFullName(const string& );
 
         void updateInfor(string, const Staff&);
 
+        void displayNode(Node*);
         void displayList();
                 
-        void displaySalaryInformation();
         void displayWorkingdaysInformation();
+        void displaySalaryInformation();
 
         void ReadDataFromFile(const string&);
         void WriteDataToFile(const string&);
-        void UpdateData(const string&);
+        void UpdateData(const string&);        
 };
+
 #endif

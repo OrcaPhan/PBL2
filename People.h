@@ -3,7 +3,6 @@
 #define People_h
 #include<iostream>
 #include<string>
-#include"tool.h"
 #include"Date.h"
 
 using namespace std;
@@ -28,7 +27,9 @@ class People {
         void setPhoneNumber(const string&);
         void setAddressEmail(const string&);
 
-        void AddInfor();
-        void DisplayInfor() const;
+        virtual void AddInfor();
+        virtual void DisplayInfor() const;
+        virtual double getSalary()  const=0;
 };
+
 #endif

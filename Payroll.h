@@ -1,9 +1,9 @@
 //Payroll.h:
 #ifndef Payroll_h
 #define Payroll_h
-#include"Attendance.h"
 #include<iostream>
 #include<string>
+#include"Attendance.h"
 
 using namespace std;
 
@@ -19,15 +19,17 @@ class Payroll {
         float  getSalryCoefficient()const;
         double getBasicSalry()const;
         double getReview() const;
-        string getReview(int ) const;
+        string getReview(int) const;
         int    getDayOff() const;
-        double GetBonus() const;
-        double GetDecuction() const;
-        double calculateSalary() const;
 
         void setSalryCoefficient(const float& );
         void setBasicSalry(const double& );
         void setReview(const double&) ;
-        void setDayOff(const int&) ;
+        void setDayOff(const int&) ; 
+        
+        double GetBonus() const;
+        double GetDecuction() const;
+        double calculateSalary() const;
 };
+
 #endif

@@ -18,7 +18,8 @@ class Attendance {
         string getReview(int) const;
         int    getDayOff() const;
 
-        void setReview(const double& );
-        void setDayOff(const int& );
+        void setReview(const double&);
+        void setDayOff(const int&);
 };
+
 #endif

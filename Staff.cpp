@@ -21,7 +21,7 @@ string  Staff::getDepartment()            const { return Department;            
 float   Staff::getSalaryCoeficient()      const { return Salary.getSalryCoefficient(); }
 double  Staff::getBasicSalary()           const { return Salary.getBasicSalry();       }
 double  Staff::getReview()                const { return Salary.getReview();           }
-string  Staff::getReview(int other)       const { return Salary.getReview(2);          }
+string  Staff::getReview(int)             const { return Salary.getReview(2);          }
 int     Staff::getDayOff()                const { return Salary.getDayOff();           }
 Payroll Staff::getPayroll()               const { return Salary;                       }
 double  Staff::getBonus()                 const { return Salary.GetBonus();            }
@@ -39,31 +39,27 @@ void Staff::setBasicSalary(const double& BSy)       { Salary.setBasicSalry(BSy);
 void Staff::AddInfor() {
     float salaryCoefficient;
     int   dayOff;
-    double review,basicSalary;
+    double review, basicSalary;
+    printTabs(4); cout << "Staff Code           : "; cin.get() ; getline(cin, StaffCode);
     People::AddInfor();
-    printTabs(4); cout << "Staff Code           : "; getline(cin, StaffCode);
     printTabs(4); cout << "Position             : "; getline(cin, Position);
     printTabs(4); cout << "Department           : "; getline(cin, Department);
-    printTabs(4); cout << "SalaryCoefficient    : "; cin>>salaryCoefficient;
-                                                     Salary.setSalryCoefficient(salaryCoefficient);
-    printTabs(4); cout << "Basic Salary    : "; cin>>basicSalary;
-                                                     Salary.setBasicSalry(basicSalary);
-    printTabs(4); cout << "DayOff               : "; cin>>dayOff;
-                                                     Salary.setDayOff(dayOff);
-    printTabs(4); cout << "Review( Enter on a 10-point scale ): "; cin>>review;
-                                                     Salary.setReview(review);
+    printTabs(4); cout << "Salary Coefficient   : "; cin >> salaryCoefficient; Salary.setSalryCoefficient(salaryCoefficient);
+    printTabs(4); cout << "Basic Salary         : "; cin >> basicSalary; Salary.setBasicSalry(basicSalary);
+    printTabs(4); cout << "Day Off              : "; cin >> dayOff; Salary.setDayOff(dayOff);
+    printTabs(4); cout << "Review (Enter on a 10-point scale ): "; cin >> review; Salary.setReview(review);
                                                 
 }
 
-void Staff::DisplayInfor() const{
-    cout<<endl;
+void Staff::DisplayInfor() const {
+    cout << endl;
     printTabs(4); cout << "Staff Code           : " << StaffCode << endl;
     People::DisplayInfor();
     printTabs(4); cout << "Position             : " << Position << endl;
     printTabs(4); cout << "Department           : " << Department << endl;
-    printTabs(4); cout << "Salary               : " <<fixed<<setprecision(3)<< getSalary() << endl;
-    printTabs(4); cout << "SalaryCoefficient    : "<<Salary.getSalryCoefficient()<<endl;
-    printTabs(4); cout << "Basic Salary         : "<<Salary.getBasicSalry()<<endl;
-    printTabs(4); cout << "DayOff               : "<<Salary.getDayOff()<<endl;
-    printTabs(4); cout << "Review               : "<<Salary.getReview()<<"( "<<Salary.getReview(2)<<" )"<<endl;
+    printTabs(4); cout << "Salary               : " << fixed << setprecision(3) << getSalary() << endl;
+    printTabs(4); cout << "Salary Coefficient   : " << fixed << setprecision(1) << Salary.getSalryCoefficient() << endl;
+    printTabs(4); cout << "Basic Salary         : " << fixed << setprecision(3) << Salary.getBasicSalry() << endl;
+    printTabs(4); cout << "Day Off              : " << Salary.getDayOff() << endl;
+    printTabs(4); cout << "Review               : " << fixed << setprecision(1) << Salary.getReview() << " (" << Salary.getReview(2) << ")" << endl;
 }

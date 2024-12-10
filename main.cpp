@@ -1,3 +1,4 @@
+//main.cpp:
 #include<iostream>
 #include<cstdlib>
 #include<string>
@@ -10,9 +11,7 @@
 #include"SystemManager.h"
 
 using namespace std;
-/* 
-g++ main.cpp Date.h Date.cpp Attendance.h Attendance.cpp Payroll.h Payroll.cpp People.h People.cpp Staff.h Staff.cpp SystemManager.h SystemManager.cpp -o  test.exe 
-*/
+
 void Readfile(SystemManager&, string&);
 void Writefile(SystemManager&);
 void Menu();
@@ -104,13 +103,7 @@ void Menu() {
                 printTabs(4); cout << "Enter Staff Code to update: ";
                 cin >> staffCode;
                 newStaff = systemManager.findByStaffCode(staffCode);
-                if (newStaff) {
-                    systemManager.updateInfor(staffCode, *newStaff);
-                    printTabs(4); cout << "Employee information updated successfully!" << endl;
-                } else {
-                    printTabs(4); cout << "Employee not found!" << endl;
-                }       
-                Enter();                
+                systemManager.updateInfor(staffCode, *newStaff);             
                 break;
             case 7: 
                 printTabs(4); cout << "Enter Staff Code to delete: ";

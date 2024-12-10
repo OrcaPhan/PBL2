@@ -1,4 +1,4 @@
-// Attendance.h:
+//Attendance.h:
 #ifndef Attendance_h
 #define Attendance_h
 #include<iostream>
@@ -8,7 +8,7 @@ using namespace std;
 
 class Attendance {
     protected:
-        double Review;
+        float Review;
         int DayOff;
     public:
         Attendance(double =0.0, int =0);

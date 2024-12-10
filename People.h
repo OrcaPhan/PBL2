@@ -29,7 +29,7 @@ class People {
 
         virtual void AddInfor();
         virtual void DisplayInfor() const;
-        virtual double getSalary()  const=0;
+        virtual double getSalary() const =0;
 };
 
 #endif

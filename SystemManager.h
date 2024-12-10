@@ -33,14 +33,12 @@ class SystemManager {
         Staff* findByStaffCode(const string&);
         void displayByStaffCode(const string&);
         
-        vector<Staff*> findByFullName(const string& );
-        void displayByFullName(const string& );
+        vector<Staff*> findByFullName(const string&);
+        void displayByFullName(const string&);
 
         void updateInfor(string, const Staff&);
 
-        void displayNode(Node*);
-        void displayList();
-                
+        void displayList();      
         void displayWorkingdaysInformation();
         void displaySalaryInformation();
 

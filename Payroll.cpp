@@ -21,17 +21,17 @@ void Payroll::setReview(const double& review) 						{		attendance.setReview(revi
 void Payroll::setDayOff(const int& dayoff) 							{		attendance.setDayOff(dayoff);			}
 
 double Payroll::GetBonus() const {
-    return getReview() * 0.01 * BasicSalary;
+    return (getReview() * 10/100) * (BasicSalary * 10/100);
 }
 
 double Payroll::GetDecuction() const {
     if (getDayOff() == 0) return 0;
-    if (getDayOff() < 5)
-        return getDayOff() * 0.01 * BasicSalary;
+    if (getDayOff() < 3)
+        return getDayOff() * (1/100) * BasicSalary;
     else
-        return getDayOff() * 0.03 * BasicSalary;
+        return getDayOff() * (3/100) * BasicSalary;
 }
 
 double Payroll::calculateSalary() const {
-    return (double)SalaryCoefficient * BasicSalary / 30.0 * (30 - attendance.getDayOff()) + (double)Payroll::GetBonus() - (double)Payroll::GetDecuction();
+    return (double)SalaryCoefficient * BasicSalary + (double)Payroll::GetBonus() - (double)Payroll::GetDecuction();
 }

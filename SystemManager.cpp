@@ -4,8 +4,8 @@
 #include<fstream>
 #include<sstream>
 #include<stdexcept>
-#include<thread> // For this_thread::sleep_for
-#include<chrono> // For chrono::seconds
+#include<thread>
+#include<chrono>
 #include <iomanip> 
 #include"People.h"
 #include"Staff.h"
@@ -227,7 +227,7 @@ void SystemManager::updateInfor(string staffcode, const Staff& updatestaff) {
                 }
             }
         }
-        printTabs(4); cout << "Update successful..." << endl;
+        printTabs(4); cout << "Employee information updated successfully!" << endl;
         Enter();
     } else {
         printTabs(4); cout << "Employee not found!!!" << endl;
@@ -235,16 +235,11 @@ void SystemManager::updateInfor(string staffcode, const Staff& updatestaff) {
     }
 }
 
-void SystemManager::displayNode(Node *newnode) {
-    printTabs(4); cout << "Employee Information:" << endl;
-    newnode->staff->DisplayInfor();
-}
-
 void SystemManager::displayList() {
     Node* current = head;
     int count = 1;
     cout << "=================================================================================================================================================================" << endl;
-    cout << setw(5)  << left << setfill(' ') << "|ON";  // Order Numbers
+    cout << setw(5)  << left << setfill(' ') << "|ON";
     cout << setw(11) << left << setfill(' ') << "|StaffCode";
     cout << setw(20) << left << setfill(' ') << "|Department";
     cout << setw(17) << left << setfill(' ') << "|Position";
@@ -275,7 +270,7 @@ void SystemManager::displayList() {
 
 void SystemManager::displayWorkingdaysInformation() {
     Node* current = head;
-    int count = 0;
+    int count = 1;
     cout << "------------------------------------------------------- Workingdays Information -------------------------------------------------------------" << endl;
     cout << setw(5)  << left << "|ON";
     cout << setw(11) << left << "|StaffCode";
@@ -289,7 +284,7 @@ void SystemManager::displayWorkingdaysInformation() {
     cout << "|" << endl;
     cout << "---------------------------------------------------------------------------------------------------------------------------------------------" << endl;
     while (current != nullptr) {
-        int daysWorked = 30 - current->staff->getDayOff();
+        int daysWorked = 20 - current->staff->getDayOff();
         cout << "|" << setw(4)  << left  << setfill(' ') << count++;
         cout << "|" << setw(10) << left  << setfill(' ') << current->staff->getStaffCode();
         cout << "|" << setw(19) << left  << setfill(' ') << current->staff->getDepartment();
@@ -307,7 +302,7 @@ void SystemManager::displayWorkingdaysInformation() {
 
 void SystemManager::displaySalaryInformation() {
     Node* current = head;
-    int count = 0;
+    int count = 1;
     cout << "---------------------------------------------------------- Salary Information ------------------------------------------------------------------" << endl;
     cout << setw(5)  << left << "|ON";
     cout << setw(11) << left << "|Staff Code";
@@ -348,13 +343,13 @@ void SystemManager::ReadDataFromFile(const string& fileName) {
     getline(file, line);
     while (getline(file, line)) {
         stringstream ss(line);
-        string sn, staffCode, department, position, fullName, gender, birthDate, phoneNumber, email, salaryStr, salaryCoefficientStr, reviewStr, dayOffStr;
+        string on, staffCode, department, position, fullName, gender, birthDate, phoneNumber, email, salaryStr, salaryCoefficientStr, reviewStr, dayOffStr;
         auto trim = [](string &s) {
             s.erase(0, s.find_first_not_of(' ')); // Xóa dấu cách ở đầu
             s.erase(s.find_last_not_of(' ') + 1); // Xóa dấu cách ở cuối nếu cần
         };
-        getline(ss, sn, ',');
-        trim(sn);
+        getline(ss, on, ',');
+        trim(on);
         getline(ss, staffCode, ',');
         trim(staffCode);
         getline(ss, department, ',');
@@ -402,24 +397,24 @@ void SystemManager::WriteDataToFile(const string& fileName) {
     	cerr << "\t\tUnable to write to file " << fileName << " !!!" << endl;
         return;
     }
-    file << "ON,Staff Code,Department,Position,Full Name,Gender,Date of Birth,Phone Number,Address Email,Salary,Review,Days Worked" << endl;
+    file << "ON;Staff Code;Department;Position;Full Name;Gender;Date of Birth;Phone Number;Address Email;Salary;Review;Days Worked" << endl;
 
     Node* current = head;
     int count = 1;
     while (current) {
         Staff* staff = current->staff;
-        int daysWorked = 30 - current->staff->getDayOff();
-        file << count++ << ",";
-        file << current->staff->getStaffCode() << ",";
-        file << current->staff->getDepartment() << ",";
-        file << current->staff->getPosition() << ",";
-        file << current->staff->getFullName() << ",";
-        file << current->staff->getGender() << ",";
-        file << current->staff->getBirthdate() << ",";
-        file << current->staff->getPhoneNumber() << ",";
-        file << current->staff->getAddressEmail() << ",";
-        file << fixed << setprecision(3) << current->staff->getSalary() << ",";
-        file << fixed << setprecision(2) << current->staff->getReview(3) << ",";
+        int daysWorked = 20 - current->staff->getDayOff();
+        file << count++ << ";";
+        file << current->staff->getStaffCode() << ";";
+        file << current->staff->getDepartment() << ";";
+        file << current->staff->getPosition() << ";";
+        file << current->staff->getFullName() << ";";
+        file << current->staff->getGender() << ";";
+        file << current->staff->getBirthdate() << ";";
+        file << current->staff->getPhoneNumber() << ";";
+        file << current->staff->getAddressEmail() << ";";
+        file << fixed << setprecision(0) << current->staff->getSalary() << ";";
+        file << fixed << setprecision(2) << current->staff->getReview(3) << ";";
         file << daysWorked << endl;
 
         current = current->next;
@@ -457,5 +452,5 @@ void SystemManager::UpdateData(const string& fileName) {
         current = current->next;
     }
     file.close();
-    printTabs(4); cout << "Updated data successfully." << endl;
+    printTabs(4); cout << "Updated data successfully..." << endl;
 }

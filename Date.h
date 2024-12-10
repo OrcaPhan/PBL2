@@ -13,7 +13,6 @@ class Date {
         Date(int = 1, int = 1, int = 2000);
         Date(const string&);
         ~Date();
-        
         friend istream &operator>>(istream&, Date&);
         friend ostream &operator<<(ostream&, const Date&);
 };

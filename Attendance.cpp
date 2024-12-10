@@ -1,4 +1,4 @@
-// Attendance.cpp:
+//Attendance.cpp:
 #include <iostream>
 #include <string>
 #include "Attendance.h"
@@ -13,13 +13,13 @@ double Attendance::getReview() const {  return Review; }
 
 string Attendance::getReview(int) const {
     if (Review >= 9.5) return "Outstanding";
-    else if (Review < 9.5 && Review >= 8.5) return "Good performance";
-        else if (Review < 8.5 && Review >=7) return "Satisfactory";
+    else if (Review >= 8.5 && Review < 9.5) return "Good performance";
+        else if (Review >= 7 && Review < 8.5) return "Satisfactory";
             else return "Unsatisfactory!";
 }
 
 int    Attendance::getDayOff() const {  return DayOff; }
 
-void Attendance::setReview(const double& target) { Review = target; }
+void Attendance::setReview(const double& target) { Review = (double)target; }
 
 void Attendance::setDayOff(const int& dayoff)    { DayOff = dayoff; }

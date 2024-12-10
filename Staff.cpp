@@ -23,9 +23,7 @@ double  Staff::getBasicSalary()           const { return Salary.getBasicSalry();
 double  Staff::getReview()                const { return Salary.getReview();           }
 string  Staff::getReview(int)             const { return Salary.getReview(2);          }
 int     Staff::getDayOff()                const { return Salary.getDayOff();           }
-Payroll Staff::getPayroll()               const { return Salary;                       }
 double  Staff::getBonus()                 const { return Salary.GetBonus();            }
-double  Staff::getDecuction()             const { return Salary.GetDecuction();        }
 double  Staff::getSalary()                const { return Salary.calculateSalary();     }
 
 void Staff::setStaffCode(const string& staffcode)   { StaffCode = staffcode;           }

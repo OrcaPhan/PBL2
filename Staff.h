@@ -27,9 +27,7 @@ class Staff: public People {
         double  getReview()            const;
         string  getReview(int)         const;
         int     getDayOff()            const;
-        Payroll getPayroll()           const;
         double  getBonus()             const;
-        double  getDecuction()         const;
         double  getSalary()            const;
 
         void    setStaffCode(const string&);

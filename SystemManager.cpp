@@ -397,24 +397,24 @@ void SystemManager::WriteDataToFile(const string& fileName) {
     	cerr << "\t\tUnable to write to file " << fileName << " !!!" << endl;
         return;
     }
-    file << "ON;Staff Code;Department;Position;Full Name;Gender;Date of Birth;Phone Number;Address Email;Salary;Review;Days Worked" << endl;
+    file << "ON,Staff Code,Department,Position,Full Name,Gender,Date of Birth,Phone Number,Address Email,Salary,Review,Days Worked" << endl;
 
     Node* current = head;
     int count = 1;
     while (current) {
         Staff* staff = current->staff;
         int daysWorked = 20 - current->staff->getDayOff();
-        file << count++ << ";";
-        file << current->staff->getStaffCode() << ";";
-        file << current->staff->getDepartment() << ";";
-        file << current->staff->getPosition() << ";";
-        file << current->staff->getFullName() << ";";
-        file << current->staff->getGender() << ";";
-        file << current->staff->getBirthdate() << ";";
-        file << current->staff->getPhoneNumber() << ";";
-        file << current->staff->getAddressEmail() << ";";
-        file << fixed << setprecision(0) << current->staff->getSalary() << ";";
-        file << fixed << setprecision(2) << current->staff->getReview(3) << ";";
+        file << count++ << ",";
+        file << current->staff->getStaffCode() << ",";
+        file << current->staff->getDepartment() << ",";
+        file << current->staff->getPosition() << ",";
+        file << current->staff->getFullName() << ",";
+        file << current->staff->getGender() << ",";
+        file << current->staff->getBirthdate() << ",";
+        file << current->staff->getPhoneNumber() << ",";
+        file << current->staff->getAddressEmail() << ",";
+        file << fixed << setprecision(3) << current->staff->getSalary() << ",";
+        file << fixed << setprecision(2) << current->staff->getReview(3) << ",";
         file << daysWorked << endl;
 
         current = current->next;
@@ -422,6 +422,7 @@ void SystemManager::WriteDataToFile(const string& fileName) {
     file.close();
     printTabs(4); cout << "Data written successfully to " << fileName << endl;
 }
+
 
 void SystemManager::UpdateData(const string& fileName) {
     ofstream file(fileName);
